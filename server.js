@@ -86,7 +86,7 @@ const server = http
       const token = auth.split(" ")[1];
       console.log(token);
       usersData = readFile();
-      const user = usersData.find((u) => (u.token = token));
+      const user = usersData.find((u) => u.token === token);
 
       if (!user) {
         res.writeHead(403, { "content-type": "application/json" });
